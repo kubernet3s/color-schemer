@@ -16,7 +16,8 @@ async def get_page(browser, url):
 async def extract_data(page):
     # Select tr with a th and td descendant from table
     elements = await page.xpath(
-        '//table[@class="infobox"]/tbody/tr[th and td]')
+        '//table[contains(@class, "name")]/tbody/tr[th and td]')
+    print(elements)
     # Extract data
     result = {}
     for element in elements:
@@ -43,10 +44,11 @@ async def extract_all(languages):
 
 if __name__ == "__main__":
     languages = {
-        "python": "https://es.wikipedia.org/wiki/Python",
-        "Rust": "https://es.wikipedia.org/wiki/Rust_(lenguaje_de_programaci%C3%B3n)",
-        "Java": "https://es.wikipedia.org/wiki/Java_(lenguaje_de_programaci%C3%B3n)",
-        "Javascript": "https://es.wikipedia.org/wiki/JavaScript"
+        "python": "https://en.wikipedia.org/wiki/Python_(programming_language)",
+        "Rust": "https://en.wikipedia.org/wiki/Rust_(programming_language)",
+        "Java": "https://en.wikipedia.org/wiki/Java_(programming_language)",
+        "Javascript": "https://en.wikipedia.org/wiki/JavaScript", 
+        "thearmypainter": "https://shop.thearmypainter.com/products.php?ProductGroupId=19"
     }
 
     loop = asyncio.get_event_loop()
