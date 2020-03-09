@@ -14,7 +14,9 @@ class PaintsSpider(scrapy.Spider):
         p_img_arr = []
 
         for image in paint_images:
-            p_img_arr.append(image.attrib['href'])
+            image_url = image.attrib['href']
+            corrected_url = image_url[:57] + '%20' + image_url[58:]
+            p_img_arr.append(corrected_url)
 
         # print (p_img_arr)
         entry_num = 0
