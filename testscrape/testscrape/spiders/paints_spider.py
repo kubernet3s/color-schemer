@@ -18,7 +18,7 @@ class PaintsSpider(scrapy.Spider):
             corrected_url = image_url[:57] + '%20' + image_url[58:]
             p_img_arr.append(corrected_url)
 
-        # print (p_img_arr)
+        print (p_img_arr)
         entry_num = 0
         for paint in paint_names:
             yield {
