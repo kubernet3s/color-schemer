@@ -29,6 +29,7 @@ class PaintsSpider(scrapy.Spider):
         entry_num = 0
         for paint in paint_names:
             yield {
+                '_id': entry_num + 1,
                 'name': paint,
                 'image': p_img_arr[entry_num],
                 'rgba': rgb_arr[entry_num]
