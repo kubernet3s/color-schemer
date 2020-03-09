@@ -1,4 +1,6 @@
 import scrapy
+from PIL import Image
+import urllib.request as urllib
 
 class PaintsSpider(scrapy.Spider):
     name = "paints"
@@ -12,18 +14,24 @@ class PaintsSpider(scrapy.Spider):
         paint_images = response.xpath('//a[contains(@rel, "base")]')
 
         p_img_arr = []
+        rgb_arr = []
 
         for image in paint_images:
             image_url = image.attrib['href']
             corrected_url = image_url[:57] + '%20' + image_url[58:]
             p_img_arr.append(corrected_url)
 
-        print (p_img_arr)
+            opened_img = Image.open(urllib.urlopen(corrected_url))
+            color = opened_img.load()[100,300]
+            rgb_arr.append(color)
+
+
         entry_num = 0
         for paint in paint_names:
             yield {
                 'name': paint,
-                'image': p_img_arr[entry_num]
+                'image': p_img_arr[entry_num],
+                'rgba': rgb_arr[entry_num]
             }
             entry_num += 1
 
