@@ -10,16 +10,46 @@ class PaintsSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        paint_names = response.css('a::attr(name)').getall()
-        paint_images = response.xpath('//a[contains(@rel, "base")]')
+        paint_names = response.css('a::attr(title)').getall()
+        paint_images = response.xpath('//a[contains(@rel, "gal")]')
 
         p_img_arr = []
         rgb_arr = []
 
+
+        print(">>>>>>>>>>>>>>>")
+        print(">>>>>>>>>>>>>>>")
+        print(">>>>>>>>>>>>>>>")
+        print(">>>>>>>>>>>>>>>")
+        print(">>>>>>>>>>>>>>>")
+        
+        print((paint_images[0]))
         for image in paint_images:
             image_url = image.attrib['href']
-            corrected_url = image_url[:57] + '%20' + image_url[58:]
+            
+            print(">>>>>>>>>>>>>>>")
+            print(">>>>>>>>>>>>>>>")
+            print(">>>>>>>>>>>>>>>")
+            print(">>>>>>>>>>>>>>>")
+            print(">>>>>>>>>>>>>>>")
+            print(">>>>>>>>>>>>>>>")
+            print(">>>>>>>>>>>>>>>")
+            print(">>>>>>>>>>>>>>>")
+            print(">>>>>>>>>>>>>>>")
+            print(">>>>>>>>>>>>>>>")
+
+            # corrected_url = image_url[:57] + '%20' + image_url[58:]
+            corrected_url = image_url.replace(" ", "%")
+            print(corrected_url)
+
             p_img_arr.append(corrected_url)
+            print()
+            print()
+            print()
+            print()
+            print()
+            print()
+            print()
 
             opened_img = Image.open(urllib.urlopen(corrected_url))
             color = opened_img.load()[100,300]
