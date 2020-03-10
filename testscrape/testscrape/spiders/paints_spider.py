@@ -10,11 +10,13 @@ class PaintsSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        paint_names = response.css('a::attr(title)').getall()
-        paint_images = response.xpath('//a[contains(@title, "")]')
+        paint_names = response.css('a::attr(name)').getall()
+        paint_images = response.css('div.left.padBot10.padRight10 > a::attr(href)').getall()
+        # paint_images = response.xpath('//a[contains(@title, "")]')
 
-        p_img_arr = []
-        rgb_arr = []
+        # p_img_arr = []
+        # rgb_arr = []
+        p_id_arr = []
 
 
         print(">>>>>>>>>>>>>>>")
@@ -24,8 +26,7 @@ class PaintsSpider(scrapy.Spider):
         print(">>>>>>>>>>>>>>>")
         
         print((len(paint_images)))
-        for image in paint_images:
-            image_url = image.attrib['href']
+        for image_url in paint_images:
             
             print(">>>>>>>>>>>>>>>")
             print(">>>>>>>>>>>>>>>")
@@ -39,11 +40,9 @@ class PaintsSpider(scrapy.Spider):
             print(">>>>>>>>>>>>>>>")
 
             # corrected_url = image_url[:57] + '%20' + image_url[58:]
-            space_removed_url = image_url.replace(" ", "%")
-            corrected_url = space_removed_url[:58] + "20" + space_removed_url[58:69] + "20" + space_removed_url[69:]
-            print(corrected_url)
+            id = image_url[70:76]
 
-            p_img_arr.append(corrected_url)
+            p_id_arr.append(id)
             print()
             print()
             print()
@@ -52,21 +51,31 @@ class PaintsSpider(scrapy.Spider):
             print()
             print()
 
-            opened_img = Image.open(urllib.urlopen(corrected_url))
+            # opened_img = Image.open(urllib.urlopen(corrected_url))
 
-            print(opened_img)
+            # print(opened_img)
 
-            color = opened_img.load()[100,300]
-            rgb_arr.append(color)
+            # color = opened_img.load()[100,300]
+            # rgb_arr.append(color)
 
 
         entry_num = 0
+        print(p_id_arr)
+
+        print()
+        print()
+        print()
+        print()
+        print()
+        print()
+        print()
+
         for paint in paint_names:
             yield {
-                '_id': entry_num + 1,
+                # '_id': p_id_arr[entry_num],
                 'name': paint,
-                'image': p_img_arr[entry_num],
-                'rgba': rgb_arr[entry_num]
+                # 'image': p_img_arr[entry_num],
+                # 'rgba': rgb_arr[entry_num]
             }
             entry_num += 1
 
