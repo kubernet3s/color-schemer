@@ -1,2 +1,2 @@
-FLASK_APP = pymongo_example
+FLASK_APP = pymongoexample
 FLASK_ENV = development
