@@ -10,6 +10,9 @@ cluster =  MongoClient("mongodb+srv://admin-db:g9LdLMiYf5mwvoDl@cluster0-ioxp7.m
 db = cluster["color-schemer"]
 collection = db["acryllic-paints"]
 
+newdb = cluster['colorschemer']
+newcollection = newdb['acryllicpaints']
+
 with open('/Users/mukkan/Desktop/personal_projects/color-schemer/testscrape/paints.json') as f:
     data = json.load(f)
 
@@ -21,4 +24,4 @@ class AcryllicPaint(Resource):
                 return paint, 200
             return "paint not found", 400
 
-    print(get(collection, 1))
+    # print(get(collection, 1))

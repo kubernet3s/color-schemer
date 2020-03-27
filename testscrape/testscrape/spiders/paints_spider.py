@@ -18,13 +18,6 @@ class PaintsSpider(scrapy.Spider):
         # rgb_arr = []
         p_id_arr = []
 
-
-        print(">>>>>>>>>>>>>>>")
-        print(">>>>>>>>>>>>>>>")
-        print(">>>>>>>>>>>>>>>")
-        print(">>>>>>>>>>>>>>>")
-        print(">>>>>>>>>>>>>>>")
-        
         print((len(paint_images)))
         for image_url in paint_images:
             
