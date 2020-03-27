@@ -5,10 +5,8 @@ import paints from  "./paints.json"
 function App() {
   console.log(paints)
   
-  function remove_a(rgba){
-    const rgba_str = rgba.join(",")
-    const rgb = rgba_str.slice(0, rgba_str.length - 4)
-    return rgb
+  function rgb(rgba){
+    return `rgb(${rgba.slice(0, 3).join(",")})`
   }
   return (
     <div className="App">
@@ -27,7 +25,7 @@ function App() {
         </a>
         <ul>
           {paints.map(
-            paint => <li key={paint._id}><font color = {remove_a(paint.rgba)}>{paint.name}</font></li>
+            paint => <li key={paint._id} class={paint.name}><font color = {rgb(paint.rgba)}>{paint.name}</font></li>
           )}
         </ul>
       </header>
