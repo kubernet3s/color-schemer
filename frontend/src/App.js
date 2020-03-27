@@ -25,7 +25,7 @@ function App() {
         </a>
         <ul>
           {paints.map(
-            paint => <li key={paint._id} class={paint.name}><font color = {rgb(paint.rgba)}>{paint.name}</font></li>
+            paint => <li key={paint._id} class={paint.name}><font style= {{color: rgb(paint.rgba)}}>{paint.name}</font></li>
           )}
         </ul>
       </header>
