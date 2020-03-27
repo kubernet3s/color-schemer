@@ -1,9 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ColourWheel from 'react-colour-wheel'
-
+import paints from  "./paints.json"
 function App() {
+  console.log(paints)
+  
+  function remove_a(rgba){
+    const rgba_str = rgba.join(",")
+    const rgb = rgba_str.slice(0, rgba_str.length - 4)
+    return rgb
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -19,22 +25,12 @@ function App() {
         >
           Learn React
         </a>
+        <ul>
+          {paints.map(
+            paint => <li key={paint._id}><font color = {remove_a(paint.rgba)}>{paint.name}</font></li>
+          )}
+        </ul>
       </header>
-      <ColourWheel
-        radius={200}
-        padding={10}
-        lineWidth={50}
-        onColourSelected={(rgb) => this.setState({ rgb })}
-        onRef={ref => (this.colourWheel = ref)}
-        spacers={{
-          colour: '#FFFFFF',
-          shadowColour: 'grey',
-          shadowBlur: 5
-        }}
-        preset
-        presetColour={this.state.rgb}
-        animated
-      />
     </div>
   );
 }
