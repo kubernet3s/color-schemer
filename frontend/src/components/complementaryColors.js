@@ -1,6 +1,3 @@
-import React from "react"
-import paints from "../paints.json"
-
 function complementCalculator(color){
     let complement = [0, 0, 0]
 
@@ -11,13 +8,14 @@ function complementCalculator(color){
     return complement
 }
 
-function complementLocator(color){
+function complementLocator(color, colorList){
     const trueComplement = complementCalculator(color)
     let closestComplement
     let leastDelta = 765
 
-    for (paint in paints){
-        let rgb = paint.rgba.slice(0, 3)
+    for (let i = 0; i < colorList.length; i++){
+        const paint = colorList[i]
+        const rgb = paint.rgba.slice(0, 3)
 
         let delta = 0
         for (let i = 0; i < rgb.length; i++) {
@@ -29,7 +27,7 @@ function complementLocator(color){
             closestComplement = paint
         }
     }
-    return closestComplement
+    return closestComplement.name
 }
 
-export default complementCalculator
+export default complementLocator
