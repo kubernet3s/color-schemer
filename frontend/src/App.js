@@ -2,9 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import paints from  "./paints.json"
-function App() {
-  console.log(paints)
-  
+function App() {  
   function rgb(rgba){
     return `rgb(${rgba.slice(0, 3).join(",")})`
   }
