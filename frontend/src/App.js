@@ -1,11 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import paints from  "./paints.json"
+import ColorList from './components/colorList';
 function App() {  
-  function rgb(rgba){
-    return `rgb(${rgba.slice(0, 3).join(",")})`
-  }
   return (
     <div className="App">
       <header className="App-header">
@@ -21,12 +18,8 @@ function App() {
         >
           Learn React
         </a>
-        <ul>
-          {paints.map(
-            paint => <li key={paint._id} class={paint.name}><font style= {{color: rgb(paint.rgba)}}>{paint.name}</font></li>
-          )}
-        </ul>
       </header>
+      <ColorList/>
     </div>
   );
 }

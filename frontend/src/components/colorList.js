@@ -1,11 +1,11 @@
-import paints from  "./paints.json"
+import paints from  "../paints.json"
 import React from 'react';
 
 function rgb(rgba){
     return `rgb(${rgba.slice(0, 3).join(",")})`
 }
 
-function colorList(){
+function ColorList(){
     return(
         <ul>
         {paints.map(
@@ -15,4 +15,4 @@ function colorList(){
     )
 }
 
-export default colorList
+export default ColorList
