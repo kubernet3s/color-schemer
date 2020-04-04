@@ -12,10 +12,8 @@ function PaintItem(paint, schemeChange, scheme){
     const colorArr = paint.rgba.slice(0,3)
 
     function addColor(colorArr){
-        debugger
-        schemeChange(scheme.push(colorArr))
-        debugger
-        return scheme
+        scheme.push(colorArr)
+        schemeChange(scheme)
     }
 
     let PaintItem =

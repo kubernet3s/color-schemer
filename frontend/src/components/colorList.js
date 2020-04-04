@@ -7,6 +7,7 @@ import PaintItem from "./PaintItem"
 function ColorList(props){
     let scheme = props.scheme
     let schemeChange = props.schemeChange
+    debugger
     return(
         <div>
         <ul>

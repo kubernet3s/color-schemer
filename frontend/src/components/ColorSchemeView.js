@@ -1,16 +1,16 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 
 
 function ColorSchemeView(props) {
     debugger
-    let scheme = props.scheme;
-    let schemeView = scheme.length ? 
+    let schemeView = displayedColors ? 
         <div>
-        {scheme.map(
+        {displayedColors.map(
             color => 
             <div 
                 className="swatch" 
-                style= {{background: "black"}}/>
+                style= {{background: "black"}}
+            />
         )}
         </div>
         :
