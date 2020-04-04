@@ -16,11 +16,14 @@ function ColorList(){
     
 
     return(
+        <div>
         <ul>
         {paints.map(
-          paint => PaintItem(paint)
+            
+            paint => PaintItem(paint)
         )}
       </ul>
+      </div>
     )
 }
 

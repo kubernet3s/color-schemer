@@ -6,36 +6,34 @@ function PaintItem(paint){
     let [hidden, toggleHidden] = useState(true)
 
     function rgb(rgba){
-        debugger
         return `rgb(${rgba.slice(0, 3).join(",")})`
     }    
 
     const complement = complementLocator(paint, paints)
 
-    debugger
 
     let PaintItem =
-        <li key={paint._id} class={paint.name}>
+        <li key={paint._id} className={paint.name}>
             <span 
                 onClick={() => toggleHidden(!hidden)}
-                style= {{color: rgb(paint.rgba)}}>{paint.name}
+                style= {{color: rgb(paint.rgba)}}>Paint: {paint.name}
             </span>
         </li>
     ;
-
-    let ComplementItem = paint.hidden ? null :
-        <li key={complement._id} class={complement.name}>
+    let ComplementItem = hidden ? null :
+        <li key={complement._id} className={complement.name}>
             <span 
-                style= {{color: rgb(complement.rgba)}}>{complement.name}
+                style= {{color: rgb(complement.rgba)}}>Complement: {complement.name}
             </span>
         </li>
     ;
 
     return(
         <>
-        <PaintItem/>
+        {PaintItem}
         <br/>
-        <ComplementItem/>
+        {ComplementItem}
+        <br/>
         </>
     )
 }
