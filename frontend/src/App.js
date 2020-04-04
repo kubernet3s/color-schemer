@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ColorList from './components/colorList';
+import ColorList from './components/ColorList';
+import Interface from './components/Interface'
 
 function App() {  
   return (
@@ -20,7 +21,8 @@ function App() {
           Learn React
         </a>
       </header>
-      <ColorList/>
+      {/* <ColorList/> */}
+      <Interface/>
     </div>
   );
 }

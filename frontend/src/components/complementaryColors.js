@@ -4,7 +4,6 @@ function complementCalculator(color){
     for (let i = 0; i < color.length; i++) {
         const element = color[i];
         complement[i] = 255 - element
-        debugger
     }
     return complement
 }
@@ -13,8 +12,6 @@ function complementLocator(color, colorList){
     const trueComplement = complementCalculator(color.rgba.slice(0, 3))
     let closestComplement
     let leastDelta = 765
-
-    debugger
 
     for (let i = 0; i < colorList.length; i++){
         const paint = colorList[i]

@@ -1,26 +1,17 @@
 import paints from  "../paints.json"
 import React from 'react';
 // import complementLocator from "./complementaryColors"
-import PaintItem from "./paintItem"
+import PaintItem from "./PaintItem"
 
-// function rgb(rgba){
-//     return `rgb(${rgba.slice(0, 3).join(",")})`
-// }
 
-// function displayComplement(paint, paints){
-//     alert(complementLocator(paint.rgba, paints))
-// }
-
-function ColorList(){
-
-    
-
+function ColorList(props){
+    let scheme = props.scheme
+    let schemeChange = props.schemeChange
     return(
         <div>
         <ul>
         {paints.map(
-            
-            paint => PaintItem(paint)
+            paint => PaintItem(paint, schemeChange, scheme)
         )}
       </ul>
       </div>
