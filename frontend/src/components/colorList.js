@@ -1,20 +1,29 @@
 import paints from  "../paints.json"
-import React from 'react';
-// import complementLocator from "./complementaryColors"
+import React, {useState, useEffect} from 'react';
 import PaintItem from "./PaintItem"
+import ColorSchemeView from "./ColorSchemeView"
 
-
-function ColorList(props){
-    let scheme = props.scheme
-    let schemeChange = props.schemeChange
+const ColorList = () => {
+    let [scheme, schemeChange] = useState([]);
+    // useEffect(() => {
+    //     schemeChange(scheme)
+    // }, [scheme])
     debugger
+    paints.forEach(element => {
+        console.log(element)
+    });
     return(
         <div>
-        <ul>
-        {paints.map(
-            paint => PaintItem(paint, schemeChange, scheme)
-        )}
-      </ul>
+            <ul>
+                {paints.map(
+                    paint => 
+                    <PaintItem 
+                    scheme = {scheme} 
+                    schemeChange = {schemeChange}
+                    paint = {paint}/>
+                )}
+            </ul>
+            <ColorSchemeView scheme = {scheme}/>
       </div>
     )
 }
