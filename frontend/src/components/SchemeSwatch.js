@@ -1,10 +1,12 @@
 import React from "react"
 
-const SchemeSwatch = (props) => {
-    // const color = props.color;
-    // const name = props.name;
+const SchemeSwatch = (paint) => {
+    const complement = paint.complement
     return(
-        <div style= {{background: "black"}}>Color</div>
+        <>
+            <div style= {{background: `rgba(${paint.rgba.join(",")})`}}>Color</div>
+            <div style= {{background: `rgba(${complement.rgba.join(",")})`}}>Complement</div>
+        </>
     );
 };
 
