@@ -1,17 +1,16 @@
 import paints from  "../paints.json"
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import PaintItem from "./PaintItem"
 import ColorSchemeView from "./ColorSchemeView"
 import complementCalculator from "./complementaryColors"
 
 const ColorList = () => {
     let [scheme, schemeChange] = useState([]);
-    // useEffect(() => {
-    //     schemeChange(scheme)
-    // }, [scheme])
+
     return(
-        <div class="flex">
+        <div className="flex justify-center">
             <ul>
+                <h2>Army Painter Colors</h2>
                 {paints.map(
                     paint => 
                     <PaintItem 
@@ -21,7 +20,7 @@ const ColorList = () => {
                     />
                 )}
             </ul>
-            <ColorSchemeView scheme = {scheme}/>
+            <ColorSchemeView scheme = {scheme} schemeChange={schemeChange}/>
       </div>
     )
 }
