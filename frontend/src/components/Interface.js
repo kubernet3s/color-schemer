@@ -10,7 +10,7 @@ const Interface = () => {
 
     return(
         <>
-        {ColorList()}
+        <ColorList/>
         {/* {ColorSchemeView(props)} */}
         </>
     );

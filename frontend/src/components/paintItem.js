@@ -15,12 +15,6 @@ const PaintItem = ({scheme, schemeChange, paint}) => {
             <div className="box-10 margin-left-10 border-1" style={{background: `rgba(${paint.rgba.join(",")})`}}></div>
         </li>
     ;
-    // let ComplementItem = hidden ? null :
-    //     <span 
-    //         style= {{color: rgb(complement.rgba)}}>Complement: {complement.name}
-    //     </span>
-    // ;
-
     return(
         <>
         {PaintItem}
