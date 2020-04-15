@@ -24,7 +24,7 @@ const ColorList = () => {
         <div className="flex justify-center">
             <ul>
                 <h2>Army Painter Colors</h2>
-            <ColorDropdown/>
+            <ColorDropdown scheme={scheme} schemeChange={schemeChange}/>
                 {/* {options} */}
             </ul>
             <ColorSchemeView scheme = {scheme} schemeChange={schemeChange}/>

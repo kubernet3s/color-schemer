@@ -9,7 +9,7 @@ const SchemeSwatch = ({paint, scheme, schemeChange}) => {
         newScheme.splice(swatchIndex, 1)
         schemeChange([...newScheme])
     }
-
+    debugger
     return(
             <div className="flex align-center justify-center w-100percent margin-bottom-10">
                 <p className="w-200">Color: {paint.name}</p>

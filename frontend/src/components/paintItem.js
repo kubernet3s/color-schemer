@@ -19,8 +19,6 @@ const PaintItem = ({scheme, schemeChange, paint}) => {
         <>
         {PaintItem}
         <br/>
-        {/* {ComplementItem}
-        <br/> */}
         </>
     )
 }
