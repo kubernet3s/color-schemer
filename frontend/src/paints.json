@@ -1,5 +1,5 @@
 [
-{"_id": 1, "name": "Matt Black", "image": "https://admin.thearmypainter.com/files/products/Warpaints%202016/WP1101_Warpaint_P-Photo_2016.png", "rgba": [39, 36, 37, 255]},
+{"_id": 1, "name": "Matt Black", "image": "https://admin.thearmypainter.com/files/products/Warpaints%202016/WP1101_Warpaint_P-Photo_2016.png", "rgba": [0, 0, 0, 255]},
 {"_id": 2, "name": "Matt White", "image": "https://admin.thearmypainter.com/files/products/Warpaints%202016/WP1102_Warpaint_P-Photo_2016.png", "rgba": [255, 255, 255, 255]},
 {"_id": 3, "name": "Pure Red", "image": "https://admin.thearmypainter.com/files/products/Warpaints%202016/WP1104_Warpaint_P-Photo_2016.png", "rgba": [176, 37, 43, 255]},
 {"_id": 4, "name": "Dragon Red", "image": "https://admin.thearmypainter.com/files/products/Warpaints%202016/WP1105_Warpaint_P-Photo_2016.png", "rgba": [132, 33, 36, 255]},

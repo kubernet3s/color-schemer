@@ -1,22 +1,22 @@
-import paints from  "../paints.json"
+// import paints from  "../paints.json"
 import React, {useState} from 'react';
-import PaintItem from "./PaintItem"
+// import PaintItem from "./PaintItem"
 import ColorSchemeView from "./ColorSchemeView"
-import complementCalculator from "../functions/ComplementaryColors"
+// import complementCalculator from "../functions/ComplementaryColors"
 import ColorDropdown from "./ColorDropdown"
 
 const ColorList = () => {
     let [scheme, schemeChange] = useState([]);
 
-    const options =
-    paints.map(
-        paint => 
-        <PaintItem 
-        scheme = {scheme} 
-        schemeChange = {schemeChange}
-        paint = {{...paint, complement: complementCalculator(paint, paints)}}
-        />
-    )
+    // const options =
+    // paints.map(
+    //     paint => 
+    //     <PaintItem 
+    //     scheme = {scheme} 
+    //     schemeChange = {schemeChange}
+    //     paint = {{...paint, complement: complementCalculator(paint, paints)}}
+    //     />
+    // )
 
 
 
