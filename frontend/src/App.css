@@ -53,6 +53,10 @@
   justify-content: center;
 }
 
+.space-between {
+  justify-content: space-between;
+}
+
 /* cursor options */
 .pointer {
   cursor: pointer;
