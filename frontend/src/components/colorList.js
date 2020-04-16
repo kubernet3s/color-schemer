@@ -1,4 +1,3 @@
-// import paints from  "../paints.json"
 import React, {useState} from 'react';
 // import PaintItem from "./PaintItem"
 import ColorSchemeView from "./ColorSchemeView"
@@ -21,12 +20,12 @@ const ColorList = () => {
 
 
     return(
-        <div className="flex justify-center">
-            <ul>
+        <div className="flex justify-center space-between w-80percent margin-default">
+            <div className="flex column w-50percent">
                 <h2>Army Painter Colors</h2>
-            <ColorDropdown scheme={scheme} schemeChange={schemeChange}/>
+                <ColorDropdown scheme={scheme} schemeChange={schemeChange}/>
                 {/* {options} */}
-            </ul>
+            </div>
             <ColorSchemeView scheme = {scheme} schemeChange={schemeChange}/>
       </div>
     )

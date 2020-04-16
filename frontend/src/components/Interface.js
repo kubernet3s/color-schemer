@@ -10,7 +10,7 @@ const Interface = () => {
 
     return(
         <>
-        <ColorList/>
+        <ColorList className="w-80percent"/>
         {/* {ColorSchemeView(props)} */}
         </>
     );

@@ -77,11 +77,24 @@
   width: 200px;
 }
 
+.w-40percent{
+  width: 40%;
+}
+
 .w-50percent{
   width: 50%;
 }
+
+.w-80percent{
+  width: 80%;
+}
+
 .w-100percent{
   width: 100%;
+}
+
+.w-fit-content {
+  width: fit-content;
 }
 
 /* border options */
@@ -109,10 +122,19 @@
 }
 
 /* margin options */
+.margin-default{
+  margin: 0 auto;
+}
+
 .margin-left-10 {
   margin-left: 10px;
 }
 
 .margin-bottom-10 {
   margin-bottom: 10px;
+}
+
+/* overflow options */
+.overflow-auto{
+  overflow: auto;
 }
