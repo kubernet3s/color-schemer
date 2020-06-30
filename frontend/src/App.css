@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-color: #61dafb;
+  background-color: #00a1ff6b;
+  font-family: 'Roboto', sans-serif;
 }
 
 .App-logo {
@@ -23,6 +24,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  
 }
 
 .App-link {
@@ -36,6 +38,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Modular Styles */
+/* background colors */
+.bg-white{
+  background-color: white;
 }
 /* flex options */
 .flex {
@@ -106,6 +114,19 @@
   width: fit-content;
 }
 
+/* padding options */
+.padding-5{
+  padding: 5px
+}
+
+.padding-10{
+  padding: 10px
+}
+
+.padding-20{
+  padding: 20px;
+}
+
 /* border options */
 .border-1 {
   border: 1px solid black;
@@ -153,4 +174,13 @@
 /* overflow options */
 .overflow-auto{
   overflow: auto;
+}
+
+/* font options */
+.f-20{
+  font-size: 20px;
+}
+
+.f-30{
+  font-size: 30px;
 }

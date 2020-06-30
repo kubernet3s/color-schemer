@@ -11,8 +11,8 @@ const ColorSchemeView = ({scheme, schemeChange}) => {
        null
     ;
     return(
-        <div className="flex column w-45percent border-1 border-rad-15">
-            <h2>Your Scheme</h2>
+        <div className="flex column w-45percent border-1 border-rad-15 bg-white">
+            <h2 className="f-20 padding-10">Your Scheme</h2>
             {schemeView}
         </div>
     );
