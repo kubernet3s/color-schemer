@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import './reset.css'
 import Interface from './components/Interface'
@@ -6,24 +6,32 @@ import paints from './paints.json'
 
 
 function App() {  
-  let colorsObj = {}
 
+  let colorsObj = {}
+  
   paints.forEach(paint => {
     colorsObj[paint._id] = paint
   });
-
+  
   let randomId = () => (
     Math.floor(Math.random() * paints.length + 1)
-  )
-
-  let randomColor = {color: colorsObj[randomId()].rgba}
-  console.log(randomColor)
-
+    )
+    
+  let [randomColor, setRandomColor] = useState(colorsObj[1]);
+  // let randomColor = colorsObj[randomId()].rgba;
+  let colorString = `rgba(${randomColor.rgba.join(",")})`;
+  let colorName = randomColor.name
+  // work this all into a hook so that state is updated and rerenders appropriately
+  let resetRandomColor = () =>{
+    const newId = randomId();
+    setRandomColor(colorsObj[newId]);
+    colorString = `rgba(${randomColor.rgba.join(",")})`;
+  }
   return (
     <div className="App vh-100percent">
-        <h1 className="f-30 padding-20" style={randomColor}>
-          Welcome to Color Schemer!
-          
+        <h1 className="f-30 padding-20" onClick={resetRandomColor}>
+          Welcome to <span style={{ color : colorString }}>Color Schemer!</span>
+          {colorName}
         </h1>
       <Interface/>
     </div>
