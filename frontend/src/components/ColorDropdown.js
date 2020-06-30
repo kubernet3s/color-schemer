@@ -3,9 +3,6 @@ import Select from 'react-select'
 import paints from "../paints.json"
 import complementCalculator from "../functions/ComplementaryColors"
 
-
-
-
 const ColorDropdown = ({scheme, schemeChange}) => {
     const list = paints.map(
         paint => {

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import './reset.css'
+import SplashHeader from './components/SplashHeader'
 import Interface from './components/Interface'
 import paints from './paints.json'
 
@@ -29,10 +30,7 @@ function App() {
   }
   return (
     <div className="App vh-100percent">
-        <h1 className="f-30 padding-20" onClick={resetRandomColor}>
-          Welcome to <span style={{ color : colorString }}>Color Schemer!</span>
-          {colorName}
-        </h1>
+      <SplashHeader/>
       <Interface/>
     </div>
   );
