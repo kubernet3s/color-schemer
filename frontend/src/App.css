@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #61dafb;
 }
 
 .App-logo {
@@ -72,6 +73,10 @@
   width: 100px;
 }
 
+/* height options */
+.vh-100percent{
+  height: 100vh;
+}
 /* width options */
 .w-200{
   width: 200px;
@@ -79,6 +84,10 @@
 
 .w-40percent{
   width: 40%;
+}
+
+.w-45percent{
+  width: 45%;
 }
 
 .w-50percent{
@@ -115,6 +124,9 @@
 .border-l-d-1 {
   border-left: 1px dotted black
 }
+.border-rad-15{
+  border-radius: 15px;
+}
 
 /* shadow options */
 .light-shadow {
@@ -124,6 +136,10 @@
 /* margin options */
 .margin-default{
   margin: 0 auto;
+}
+
+.margin-5{
+  margin: 5px;
 }
 
 .margin-left-10 {

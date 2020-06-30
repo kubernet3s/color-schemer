@@ -21,12 +21,12 @@ const ColorList = () => {
 
     return(
         <div className="flex justify-center space-between w-80percent margin-default">
-            <div className="flex column w-50percent">
+            <div className="flex column w-45percent margin-5">
                 <h2>Army Painter Colors</h2>
                 <ColorDropdown scheme={scheme} schemeChange={schemeChange}/>
                 {/* {options} */}
             </div>
-            <ColorSchemeView scheme = {scheme} schemeChange={schemeChange}/>
+            <ColorSchemeView className="margin-5 border-1" scheme = {scheme} schemeChange={schemeChange}/>
       </div>
     )
 }

@@ -1,23 +1,15 @@
 import React from "react"
 
-const SchemeSwatch = ({paint, scheme, schemeChange}) => {
+const SchemeSwatch = ({paint}) => {
     const complement = paint.complement
-    // const swatchIndex = scheme.indexOf(paint)
-
-    // function removeSwatch(){
-    //     const newScheme = scheme
-    //     newScheme.splice(swatchIndex, 1)
-    //     schemeChange([...newScheme])
-    // }
     return(
             <div className="flex align-center justify-center w-100percent margin-bottom-10">
-                <p className="w-200">Color: {paint.name}</p>
+                <p className="w-200 margin-5">Color: <br/> {paint.name}</p>
                 <div className="light-shadow flex">
                     <div className="box-100" style= {{background: `rgba(${paint.rgba.join(",")})`}}/>
                     <div className="box-100" style= {{background: `rgba(${complement.rgba.join(",")})`}}/>
                 </div>
-                <p className="w-200">Complement: {complement.name}</p>
-                {/* <button onClick={() => removeSwatch()}>Remove</button> */}
+                <p className="w-200">Complement: <br/> {complement.name}</p>
             </div>
     );
 };
