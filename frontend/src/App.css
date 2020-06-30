@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #00a1ff6b;
+  background-color: #ede49c;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -44,6 +44,10 @@
 /* background colors */
 .bg-white{
   background-color: white;
+}
+
+.bg-faint{
+  background-color: #dcdcdc2e;
 }
 /* flex options */
 .flex {
@@ -149,9 +153,17 @@
   border-radius: 15px;
 }
 
+.border-white{
+  border-color: white;
+}
+
 /* shadow options */
 .light-shadow {
   box-shadow: 1px 1px 3px 3px #d4d3d3
+}
+
+.txt-stroke-white{
+  -webkit-text-stroke: 1px white;
 }
 
 /* margin options */
@@ -183,4 +195,8 @@
 
 .f-30{
   font-size: 30px;
+}
+
+.bold{
+  font-weight: bold;
 }

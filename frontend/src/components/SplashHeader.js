@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import paints from "../paints.json"
 
-function SplashHeader(){
+const SplashHeader = () => {
     let colorsObj = {}
   
     paints.forEach(paint => {
@@ -22,10 +22,13 @@ function SplashHeader(){
       colorString = `rgba(${randomColor.rgba.join(",")})`;
     }
     return (
-        <h1 className="f-30 padding-20" onClick={resetRandomColor}>
-            Welcome to <span style={{ color : colorString }}>Color Schemer!</span>
-            {colorName}
+        <>
+        <h1 className="f-30 padding-20 bg-lightgrey w-fit-content margin-default border-rad-15" onClick={resetRandomColor}>
+            Welcome to <span className="pointer bold txt-stroke-white" style={{ color : colorString }}>Color Schemer!</span>
         </h1>
+        <h2>Click "Color Schemer" to change the title's color to one of the Army Painter colors</h2>
+        <h2>The current color is:<br/> {colorName}</h2>
+        </>
       );
     
 }
