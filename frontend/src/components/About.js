@@ -2,16 +2,21 @@ import React from 'react'
 
 const About = () =>{
     return(
-       <div>
-           <h3> About Color Schemer</h3>
-           <p>Short Version:<br/> I created Color Schemer because I had a problem and I wanted build something to solve it</p>
-           <p>
-                Long Version:<br/> 
-                I like painting miniatures and I wanted to start coming up with my own color schemes. The problem was that I 
-                didn't really know anything about color theory. I started doing some reading on the subject and found that 
-                found the Color Wheel:
-           </p>
-           <img src="https://www.publicdomainpictures.net/pictures/40000/velka/color-wheel-1364825482ggt.jpg"/>
+       <div className="flex column txt-left margin-default w-80percent bg-lightyellow align-center">
+           <h3 className="red bold f-30 txt-center border-b-s-1 border-red w-80percent"> About Color Schemer</h3>
+           <div>
+                <p>Short Version:<br/> I created Color Schemer because I had a problem and I wanted build something to solve it</p>
+                <p>
+                    Long Version:<br/> 
+                    I like painting miniatures and I wanted to start coming up with my own color schemes. The problem was that I 
+                    didn't really know anything about color theory. I started doing some reading on the subject and found that 
+                    found the Color Wheel:
+                </p>
+           </div>
+           <img 
+                className="box-200 padding-20" 
+                src="https://www.publicdomainpictures.net/pictures/40000/velka/color-wheel-1364825482ggt.jpg"
+            />
            <p>
                 I learned that colors opposite each other on the color wheel are complementary (see: look good together).
                 I figured that if they have a geometric relationship they must also have a mathematical relationship.
@@ -29,7 +34,10 @@ const About = () =>{
            <p>
                Have I, in my infinite wisdom, "solved" color theory?
            </p>
-           <img src="https://www.sessions.edu/wp-content/uploads/kisspng-color-wheel.png"/>
+           <img 
+                className="box-200 padding-20" 
+                src="https://www.sessions.edu/wp-content/uploads/kisspng-color-wheel.png"
+            />
            <p>
                ...not quite. But hopefully I've made it a little less intimidating for people to experiment with colors.
            </p>

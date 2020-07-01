@@ -1,7 +1,6 @@
 .App {
   text-align: center;
-  background-color: #ede49c;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .App-logo {
@@ -46,9 +45,18 @@
   background-color: white;
 }
 
+.bg-yellow{
+  background-color: #ede49c;
+}
+
+.bg-lightyellow{
+  background-color: #f0ecb5;
+}
+
 .bg-faint{
   background-color: #dcdcdc2e;
 }
+
 /* flex options */
 .flex {
   display: flex;
@@ -85,10 +93,25 @@
   width: 100px;
 }
 
+.box-200{
+  height: 200px;
+  width: 200px;
+}
+
+
 /* height options */
+.h-100percent{
+  height: 100%;
+}
+
 .vh-100percent{
   height: 100vh;
 }
+
+.h-fit{
+  height: fit-content;
+}
+
 /* width options */
 .w-200{
   width: 200px;
@@ -118,18 +141,6 @@
   width: fit-content;
 }
 
-/* padding options */
-.padding-5{
-  padding: 5px
-}
-
-.padding-10{
-  padding: 10px
-}
-
-.padding-20{
-  padding: 20px;
-}
 
 /* border options */
 .border-1 {
@@ -146,6 +157,10 @@
 .border-b-d-1 {
   border-bottom: 1px dotted black
 }
+.border-b-s-1 {
+  border-bottom: 1px solid black
+}
+
 .border-l-d-1 {
   border-left: 1px dotted black
 }
@@ -157,6 +172,10 @@
   border-color: white;
 }
 
+.border-red {
+  border-color: #6b0407; 
+}
+
 /* shadow options */
 .light-shadow {
   box-shadow: 1px 1px 3px 3px #d4d3d3
@@ -165,6 +184,28 @@
 .txt-stroke-white{
   -webkit-text-stroke: 1px white;
 }
+
+/* padding options */
+.padding-5{
+  padding: 5px
+}
+
+.padding-10{
+  padding: 10px
+}
+
+.padding-20{
+  padding: 20px;
+}
+
+.padding-5percent{
+  padding: 5%
+}
+
+.padding-10percent{
+  padding: 10%
+}
+
 
 /* margin options */
 .margin-default{
@@ -183,10 +224,25 @@
   margin-bottom: 10px;
 }
 
+.margin-10percent {
+  margin: 10%;
+}
+
+
 /* overflow options */
 .overflow-auto{
   overflow: auto;
 }
+
+/* text alignment options */
+.txt-left{
+  text-align: left;
+}
+
+.txt-center{
+  text-align: center;
+}
+
 
 /* font options */
 .f-20{
@@ -197,6 +253,18 @@
   font-size: 30px;
 }
 
+.f-40{
+  font-size: 40px;
+}
+
+.f-50{
+  font-size: 50px;
+}
+
 .bold{
   font-weight: bold;
+}
+
+.red {
+  color: #6b0407;
 }
