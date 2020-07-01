@@ -53,6 +53,10 @@
   background-color: #f0ecb5;
 }
 
+.bg-red{
+  background-color: #6b0407;
+}
+
 .bg-faint{
   background-color: #dcdcdc2e;
 }
@@ -271,4 +275,8 @@
 
 .red {
   color: #6b0407;
+}
+
+.white{
+  color: white;
 }
