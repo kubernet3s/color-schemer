@@ -9,9 +9,9 @@ const About = () =>{
                 I created Color Schemer because I had a problem and I wanted build something to solve it.</p>
                 <p className="padding-5">
                     Long Version:<br/> 
-                    I like painting miniatures and I wanted to start coming up with my own color schemes. The problem was that I 
-                    didn't really know anything about color theory. I started doing some reading on the subject and found that 
-                    found the Color Wheel:
+                    I like painting miniatures and I wanted to start coming up with my own color schemes. 
+                    However, I didn't know what colors looked good together. I started doing some reading 
+                    on the subject and found the Color Wheel:
                 </p>
            </div>
            <img 
