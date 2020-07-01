@@ -10,10 +10,10 @@ const App = () => {
   let [activeTab, setActiveTab] = useState(<Interface/>);
   
   return (
-    <div className="App h-100percent padding-5percent bg-yellow">
+    <div className="App h-100percent bg-yellow">
+      <SplashHeader/>
       <p className="pointer" onClick={()=> setActiveTab(<About/>) }>About</p>
       <p className="pointer" onClick={()=> setActiveTab(<Interface/>) }>Scheme Selector</p>
-      <SplashHeader/>
       {activeTab}
       {/* {About()} */}
     </div>

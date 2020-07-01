@@ -25,10 +25,11 @@ const SplashHeader = () => {
         <div>
             <h1 
                 className="f-50 padding-20 bg-lightgrey w-fit-content margin-default border-1 border-rad-15 red border-red" 
-                onClick={resetRandomColor}
             >
                 Welcome to&nbsp;
-                <span className="pointer bold txt-stroke-white" style={{ color : colorString }}>Color Schemer!</span>
+                <span className="pointer bold txt-stroke-white" style={{ color : colorString }} onClick={resetRandomColor}>
+                    Color Schemer!
+                </span>
             </h1>
             <h2>Click "Color Schemer" to change the title's color to one of the Army Painter colors</h2>
             <h2>The current color is:<br/> {colorName}</h2>

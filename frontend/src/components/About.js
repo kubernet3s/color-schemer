@@ -5,8 +5,9 @@ const About = () =>{
        <div className="flex column txt-left margin-default w-80percent bg-lightyellow align-center">
            <h3 className="red bold f-30 txt-center border-b-s-1 border-red w-80percent"> About Color Schemer</h3>
            <div>
-                <p>Short Version:<br/> I created Color Schemer because I had a problem and I wanted build something to solve it</p>
-                <p>
+                <p className="padding-5">Short Version:<br/> 
+                I created Color Schemer because I had a problem and I wanted build something to solve it.</p>
+                <p className="padding-5">
                     Long Version:<br/> 
                     I like painting miniatures and I wanted to start coming up with my own color schemes. The problem was that I 
                     didn't really know anything about color theory. I started doing some reading on the subject and found that 
@@ -16,29 +17,31 @@ const About = () =>{
            <img 
                 className="box-200 padding-20" 
                 src="https://www.publicdomainpictures.net/pictures/40000/velka/color-wheel-1364825482ggt.jpg"
+                alt="A color wheel"
             />
-           <p>
+           <p className="padding-5">
                 I learned that colors opposite each other on the color wheel are complementary (see: look good together).
                 I figured that if they have a geometric relationship they must also have a mathematical relationship.
                 Sure enough, after some digging I found a formula for identifying a color's complement. Armed with this knowledge
                 I set out to create an app that would help me figure out my color schemes 
                 for my <a href="https://www.thearmypainter.com/">favorite line of paints</a>.
            </p>
-           <p>
+           <p className="padding-5">
                 First I created a webcrawler in Python to scrape the rgb color values and names of each color in The Army Painter line.
                 Then I ran each color through the formula to identify it's mathematical complement. Easy right?
                 Unfortunately, reality doesn't always align neatly with our demands and paints aren't mixed based on being perfect
                 complements of one another. So I had to write an algorithm to find the paint in the line closest to the "true" complement
                 for each paint.
            </p>
-           <p>
+           <p className="padding-5">
                Have I, in my infinite wisdom, "solved" color theory?
            </p>
            <img 
                 className="box-200 padding-20" 
                 src="https://www.sessions.edu/wp-content/uploads/kisspng-color-wheel.png"
+                alt="color wheel with all possible color combinations"
             />
-           <p>
+           <p className="padding-5">
                ...not quite. But hopefully I've made it a little less intimidating for people to experiment with colors.
            </p>
        </div> 
