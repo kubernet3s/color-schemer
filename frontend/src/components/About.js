@@ -2,7 +2,7 @@ import React from 'react'
 
 const About = () =>{
     return(
-       <div className="flex column txt-left margin-default w-80percent bg-lightyellow align-center">
+       <div className="flex column txt-left margin-default w-80percent bg-lightyellow align-center padding-10 line-h-1pt5">
            <h3 className="red bold f-30 txt-center border-b-s-1 border-red w-80percent"> About Color Schemer</h3>
            <div>
                 <p className="padding-5">Short Version:<br/> 
@@ -27,7 +27,7 @@ const About = () =>{
                 for my <a href="https://www.thearmypainter.com/">favorite line of paints</a>.
            </p>
            <p className="padding-5">
-                First I created a webcrawler in Python to scrape the rgb color values and names of each color in The Army Painter line.
+                First, I created a webcrawler in Python to scrape the rgb color values and names of each color in The Army Painter line.
                 Then I ran each color through the formula to identify it's mathematical complement. Easy right?
                 Unfortunately, reality doesn't always align neatly with our demands and paints aren't mixed based on being perfect
                 complements of one another. So I had to write an algorithm to find the paint in the line closest to the "true" complement

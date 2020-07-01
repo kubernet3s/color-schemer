@@ -22,7 +22,7 @@ const SplashHeader = () => {
       colorString = `rgba(${randomColor.rgba.join(",")})`;
     }
     return (
-        <div>
+        <div className="flex">
             <h1 
                 className="f-50 padding-20 bg-lightgrey w-fit-content margin-default border-1 border-rad-15 red border-red" 
             >
