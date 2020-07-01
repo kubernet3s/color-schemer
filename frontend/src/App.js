@@ -3,7 +3,6 @@ import './App.css';
 import './reset.css'
 import SplashHeader from './components/SplashHeader'
 import Interface from './components/Interface'
-import About from './components/About'
 
 
 const App = () => {  
@@ -11,9 +10,7 @@ const App = () => {
   
   return (
     <div className="App h-100percent bg-yellow">
-      <SplashHeader/>
-      <p className="pointer" onClick={()=> setActiveTab(<About/>) }>About</p>
-      <p className="pointer" onClick={()=> setActiveTab(<Interface/>) }>Scheme Selector</p>
+      <SplashHeader setActiveTab={setActiveTab}/>
       {activeTab}
       {/* {About()} */}
     </div>

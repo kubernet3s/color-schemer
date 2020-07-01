@@ -158,6 +158,11 @@
 .border-r-d-1 {
   border-right: 1px dotted black
 }
+
+.border-r-s-1 {
+  border-right: 1px solid black
+}
+
 .border-b-d-1 {
   border-bottom: 1px dotted black
 }
@@ -209,6 +214,15 @@
 .padding-10percent{
   padding: 10%
 }
+
+.padding-r-10{
+  padding-right: 10px;
+}
+
+.padding-l-10{
+  padding-left: 10px;
+}
+
 
 
 /* margin options */

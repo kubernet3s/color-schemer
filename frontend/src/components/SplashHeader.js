@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import paints from "../paints.json"
+import Interface from "./Interface"
+import About from "./About"
 
-const SplashHeader = () => {
+const SplashHeader = ({setActiveTab}) => {
     let colorsObj = {}
   
     paints.forEach(paint => {
@@ -22,21 +24,28 @@ const SplashHeader = () => {
       colorString = `rgba(${randomColor.rgba.join(",")})`;
     }
     return (
-        <div className="flex bg-red justify-center align-center">
-            <h1 
-                className="f-50 padding-20 bg-lightgrey w-fit-content white" 
-            >
-                Welcome to&nbsp;
-                <span className="pointer bold txt-stroke-white" style={{ color : colorString }} onClick={resetRandomColor}>
-                    Color Schemer!
-                </span>
-            </h1>
+        <header className="flex column bg-red">
+            <div className="flex justify-center align-center">
+                <h1 
+                    className="f-50 padding-20 bg-lightgrey w-fit-content white" 
+                >
+                    Welcome to&nbsp;
+                    <span className="pointer bold txt-stroke-white" style={{ color : colorString }} onClick={resetRandomColor}>
+                        Color Schemer!
+                    </span>
+                </h1>
                 <p className="white">
-                    ← Click Me<br/>
+                    {/* ← Click Me<br/> */}
                     The current color is:<br/>
                     {colorName}
                 </p>
-        </div>
+            </div>
+            <div className="flex justify-center white margin-bottom-10 default-margin f-20">
+                <p className="pointer border-r-s-1 border-white padding-r-10" onClick={()=> setActiveTab(<About/>) }>About</p>
+                <p className="pointer padding-l-10" onClick={()=> setActiveTab(<Interface/>) }>Scheme Selector</p>
+            </div>
+
+        </header>
       );
     
 }
