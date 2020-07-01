@@ -24,7 +24,8 @@ const ColorDropdown = ({scheme, schemeChange}) => {
                         <span>{name}</span>
                         {dot}
                     </div>,
-                "value": {...paint, complement: complementCalculator(paint, paints) }
+                "value": {...paint, complement: complementCalculator(paint, paints) },
+                "key":{name}
             })
         }
     )

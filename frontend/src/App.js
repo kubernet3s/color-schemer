@@ -9,7 +9,7 @@ const App = () => {
   let [activeTab, setActiveTab] = useState(<Interface/>);
   
   return (
-    <div className="App h-100percent bg-yellow">
+    <div className="App min-h-80percent h-fit bg-yellow">
       <SplashHeader setActiveTab={setActiveTab}/>
       {activeTab}
       {/* {About()} */}

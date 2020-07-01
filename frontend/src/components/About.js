@@ -21,7 +21,7 @@ const About = () =>{
             />
            <p className="padding-5">
                 I learned that colors opposite each other on the color wheel are complementary (see: look good together).
-                I figured that if they have a geometric relationship they must also have a mathematical relationship.
+                I reasoned that if they have a geometric relationship they must also have a mathematical relationship.
                 Sure enough, after some digging I found a formula for identifying a color's complement. Armed with this knowledge
                 I set out to create an app that would help me figure out my color schemes 
                 for my <a href="https://www.thearmypainter.com/">favorite line of paints</a>.

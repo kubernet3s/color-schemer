@@ -2,7 +2,16 @@ a {
   text-decoration: none;
   transition: color 125ms;
 }
+
 a:hover{
+  color: red;
+}
+
+.link{
+  transition: color 125ms;
+}
+
+.link:hover{
   color: red;
 }
 
@@ -128,6 +137,10 @@ a:hover{
   height: fit-content;
 }
 
+.min-h-80vh{
+  min-height: 80vh;
+}
+
 /* width options */
 .w-200{
   width: 200px;
@@ -198,8 +211,12 @@ a:hover{
 }
 
 /* shadow options */
-.light-shadow {
+.shadow-light {
   box-shadow: 1px 1px 3px 3px #d4d3d3
+}
+
+.shadow{
+  box-shadow: 0 0 10px black
 }
 
 .txt-stroke-white{
@@ -235,6 +252,13 @@ a:hover{
   padding-left: 10px;
 }
 
+.padding-b-10{
+  padding-bottom: 10px;
+}
+.padding-b-20{
+  padding-bottom: 20px;
+}
+
 
 
 /* margin options */
@@ -246,11 +270,11 @@ a:hover{
   margin: 5px;
 }
 
-.margin-left-10 {
+.margin-l-10 {
   margin-left: 10px;
 }
 
-.margin-bottom-10 {
+.margin-b-10 {
   margin-bottom: 10px;
 }
 
