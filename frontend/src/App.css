@@ -7,6 +7,10 @@ a:hover{
   color: red;
 }
 
+button{
+  outline: none;
+}
+
 .link{
   transition: color 125ms;
 }
@@ -142,6 +146,15 @@ a:hover{
 }
 
 /* width options */
+
+.w-100{
+  width: 100px;
+}
+
+.w-150{
+  width: 150px;
+}
+
 .w-200{
   width: 200px;
 }
@@ -197,6 +210,9 @@ a:hover{
 
 .border-l-d-1 {
   border-left: 1px dotted black
+}
+.border-rad-5{
+  border-radius: 5px;
 }
 .border-rad-15{
   border-radius: 15px;
