@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import paints from "../paints.json"
-import Interface from "./Interface"
+import ColorList from "./ColorList"
 import About from "./About"
 
 const SplashHeader = ({setActiveTab}) => {
@@ -40,7 +40,7 @@ const SplashHeader = ({setActiveTab}) => {
             </div>
             <div className="flex justify-center white margin-bottom-10 default-margin f-20">
                 <p className="link pointer bold border-r-s-1 border-white padding-r-10" onClick={()=> setActiveTab(<About/>) }>About</p>
-                <p className="link pointer bold padding-l-10" onClick={()=> setActiveTab(<Interface/>) }>Scheme Selector</p>
+                <p className="link pointer bold padding-l-10" onClick={()=> setActiveTab(<ColorList/>) }>Scheme Selector</p>
             </div>
 
         </header>
