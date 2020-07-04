@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import './App.css';
-import './reset.css';
+import '../app/assets/stylesheets/App.css'
+import '../app/assets/stylesheets/reset.css'
 import SplashHeader from './components/SplashHeader';
 import Interface from './components/Interface';
 import Footer from './components/Footer';

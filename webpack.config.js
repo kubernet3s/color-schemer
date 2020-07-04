@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     context: __dirname,
-    entry: './frontend/boot_beginner.jsx',
+    entry: './frontend/index.js',
     output: {
         path: path.join(__dirname, 'app', 'assets', 'javascripts'),
         filename: 'bundle.js'
@@ -21,7 +21,14 @@ module.exports = {
                         presets: ['@babel/env', '@babel/react']
                     }
                 },
-            }
+            },
+            {
+                test: /\.css$/,
+                use: [
+                  'style-loader',
+                  'css-loader'
+                ]
+              }
         ]
     },
     devtool: 'eval-source-map'
