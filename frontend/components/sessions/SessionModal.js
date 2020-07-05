@@ -3,12 +3,12 @@ import * as APIUtil from '../../util/sessionAPIUtil';
 import SignupForm from './SignupForm';
 import LoginForm from './LoginForm'
 
-const SessionModal = ({sessionModal, setSessionModal} ) => {
+const SessionModal = ({sessionModal, setSessionModal, setCurrentUser} ) => {
     
     const displayedForm = sessionModal === 'signup' ? 
-        <SignupForm setSessionModal={setSessionModal}/> 
+        <SignupForm setSessionModal={setSessionModal} setCurrentUser={setCurrentUser}/> 
         : 
-        <LoginForm setSessionModal={setSessionModal}/>
+        <LoginForm setSessionModal={setSessionModal} setCurrentUser={setCurrentUser}/>
     ;
 
     return(

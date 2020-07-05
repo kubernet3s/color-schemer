@@ -20,7 +20,12 @@ const App = () => {
     null
 
   
-  const modal = sessionModal ? <SessionModal sessionModal={sessionModal} setSessionModal={setSessionModal}/> : null
+  const modal = sessionModal ?
+    <SessionModal sessionModal={sessionModal} setSessionModal={setSessionModal} setCurrentUser={setCurrentUser}/> 
+    : 
+    null
+  ;
+  
   return (
     <div className="App">
       <div className="min-h-80percent h-fit bg-yellow">

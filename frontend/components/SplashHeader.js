@@ -6,7 +6,7 @@ import SessionModal from "./sessions/SessionModal";
 import LoginForm from "./sessions/LoginForm";
 import SignupForm from "./sessions/SignupForm";
 
-const SplashHeader = ({setActiveTab, setSessionModal}) => {
+const SplashHeader = ({setActiveTab, currentUser}) => {
     let colorsObj = {}
   
     paints.forEach(paint => {
@@ -26,6 +26,23 @@ const SplashHeader = ({setActiveTab, setSessionModal}) => {
       setRandomColor(colorsObj[newId]);
       colorString = `rgba(${randomColor.rgba.join(",")})`;
     }
+
+    const loginLink = currentUser ?
+        null 
+        :
+        <p className="link pointer bold padding-l-10 border-r-s-1 border-white padding-r-10" 
+            onClick={()=> setSessionModal("login") }>Login
+        </p>
+    ;
+
+    const signupLink = currentUser ? 
+        null
+        :
+        <p className="link pointer bold padding-l-10" 
+            onClick={()=> setSessionModal("signup") }>Signup
+        </p>
+    ;
+
     return (
         <header className="flex column bg-red shadow margin-b-10 padding-b-10">
             <div className="flex justify-center align-center">
@@ -48,12 +65,8 @@ const SplashHeader = ({setActiveTab, setSessionModal}) => {
                 <p className="link pointer bold padding-l-10 border-r-s-1 border-white padding-r-10" 
                     onClick={()=> setActiveTab(<ColorList/>) }>Scheme Selector
                 </p>
-                <p className="link pointer bold padding-l-10 border-r-s-1 border-white padding-r-10" 
-                    onClick={()=> setSessionModal("login") }>Login
-                </p>
-                <p className="link pointer bold padding-l-10" 
-                    onClick={()=> setSessionModal("signup") }>Signup
-                </p>
+                {loginLink}
+                {signupLink}
             </div>
 
         </header>
