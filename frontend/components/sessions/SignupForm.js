@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import {signup} from '../../util/sessionAPIUtil';
 
-const SignupForm = () => {
+const SignupForm = ({setSessionModal}) => {
     let [emailAddress, setEmailAddress] = useState( "" );
     let [secondEmail, setSecondEmail] = useState( "" );
     let [password, setPassword] = useState( "" );
     let [secondPassword, setSecondPassword] = useState( "" );
-    let [errors, setErrors] = useState([])
+    let [errors, setErrors] = useState(null)
 
     const handleChange = (stateChangeFunction) =>{
         return (e) => {
@@ -16,32 +16,58 @@ const SignupForm = () => {
 
     const errorCheck = () =>{
         let currentErrors = [];
+        
+        if(emailAddress.length === 0){
+            currentErrors.push("Please enter an email address")
+            debugger
+        }
+        if (password.length < 6){
+            currentErrors.push("Please enter a password of at least six characters")
+        }
         if(emailAddress != secondEmail){
             currentErrors.push("Passwords must match")
-        }
+        };
         if(password != secondPassword){
             currentErrors.push("Emails must match")
-        }
-        setErrors(currentErrors);
+        };
+        debugger
+        return setErrors(currentErrors);
     }
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-
         errorCheck();
+        debugger
         if (errors.length === 0){
             const user = {
                 email: emailAddress,
                 password: password
             }
             signup(user)
+            setEmailAddress("")
+            setSecondEmail("")
+            setPassword("")
+            setSecondPassword("")
+            setSessionModal(null)
+        } else{
         }
     }
+
+    const errorMap = errors.map(error =>(
+        <li>{error}</li>
+    ));
+
+    const errorList = errors.length === 0 ? null :
+        <ul>
+            {errorMap}
+        </ul>
+    ;
 
     return(
         <div>
             <header className="bg-red shadow padding-20 bold white border-rad-5">Sign Up Today!</header>
             <form className="flex column padding-20 align-center" onSubmit={handleSubmit}>
+                {errorList}
                 <label for="email" className="margin-b-5">Email Address</label>
                 <input id="email" className="w-80percent margin-b-20" 
                     type="email" 
