@@ -19,7 +19,6 @@ const SignupForm = ({setSessionModal}) => {
         
         if(emailAddress.length === 0){
             currentErrors.push("Please enter an email address")
-            debugger
         }
         if (password.length < 6){
             currentErrors.push("Please enter a password of at least six characters")
@@ -30,14 +29,12 @@ const SignupForm = ({setSessionModal}) => {
         if(password != secondPassword){
             currentErrors.push("Emails must match")
         };
-        debugger
-        return setErrors(currentErrors);
+        setErrors(currentErrors);
     }
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-        errorCheck();
-        debugger
+
         if (errors.length === 0){
             const user = {
                 email: emailAddress,
@@ -53,14 +50,19 @@ const SignupForm = ({setSessionModal}) => {
         }
     }
 
-    const errorMap = errors.map(error =>(
-        <li>{error}</li>
-    ));
+    const errorMap = errors ? errors.map(error =>(
+        <li className="padding-b-10">{error}</li> 
+        ))
+        : 
+        null
+    ;
 
-    const errorList = errors.length === 0 ? null :
-        <ul>
+    const errorList = errorMap ?
+        <ul className="flex column align-start red txt-left style-disc">
             {errorMap}
         </ul>
+        :
+        null
     ;
 
     return(
@@ -95,7 +97,11 @@ const SignupForm = ({setSessionModal}) => {
                     value={secondPassword} 
                     onChange={handleChange(setSecondPassword)}
                 />
-                <button type="submit" className="bg-red border-rad-5 white align-self-center padding-5 w-25percent">Submit</button>
+                <button type="submit" className="bg-red border-rad-5 white align-self-center padding-5 w-25percent"
+                    onClick={errorCheck}
+                >
+                    Submit
+                </button>
             </form>
         </div>
     )

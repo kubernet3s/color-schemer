@@ -422,3 +422,9 @@ button{
 .white{
   color: white;
 }
+
+
+/* list option */
+.style-disc{
+  list-style: disc;
+}

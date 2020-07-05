@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {login} from '../../util/sessionAPIUtil';
 
-const LoginForm = () => {
+const LoginForm = ({setSessionModal}) => {
     let [emailAddress, setEmailAddress] = useState( "" );
     let [password, setPassword] = useState( "" );
     let [errors, setErrors] = useState([])
@@ -13,7 +13,15 @@ const LoginForm = () => {
     }
 
     const errorCheck = () =>{
-        // needs own error check
+        let currentErrors = [];
+        
+        if(emailAddress.length === 0){
+            currentErrors.push("Please enter an email address")
+        }
+        if (password.length < 6){
+            currentErrors.push("Please enter a password of at least six characters")
+        }
+        setErrors(currentErrors);
     }
 
     const handleSubmit = (e) =>{
@@ -25,14 +33,40 @@ const LoginForm = () => {
                 email: emailAddress,
                 password: password
             }
-            login(user)
-        }
-    }
+            login(user).then((success,failure) =>{
+
+                if (success){
+                    setEmailAddress("");
+                    setPassword("");
+                    setSessionModal(null);
+                }
+                else {
+                    console.log(failure);
+                };
+            });
+        };
+    };
+
+    const errorMap = errors ? errors.map(error =>(
+        <li className="padding-b-10">{error}</li> 
+        ))
+        : 
+        null
+    ;
+
+    const errorList = errorMap ?
+        <ul className="flex column align-start red txt-left style-disc">
+            {errorMap}
+        </ul>
+        :
+        null
+    ;
 
     return(
         <div>
             <header className="bg-red shadow padding-20 bold white border-rad-5">Login</header>
             <form className="flex column padding-20 align-center" onSubmit={handleSubmit}>
+                {errorList}
                 <label for="email" className="margin-b-5">Email Address</label>
                 <input id="email" className="w-80percent margin-b-20" 
                     type="email" 
@@ -47,7 +81,12 @@ const LoginForm = () => {
                     onChange={handleChange(setPassword)}
                 />
 
-                <button type="submit" className="bg-red border-rad-5 white align-self-center padding-5 w-25percent">Submit</button>
+                <button 
+                    type="submit" 
+                    className="bg-red border-rad-5 white align-self-center padding-5 w-25percent"
+                    onClick={errorCheck}>
+                    Submit
+                </button>
             </form>
         </div>
     )
