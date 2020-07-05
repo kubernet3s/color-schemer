@@ -69,7 +69,7 @@ const SignupForm = () => {
                     value={secondPassword} 
                     onChange={handleChange(setSecondPassword)}
                 />
-                <button className="bg-red border-rad-5 white align-self-center padding-5 w-25percent">Submit</button>
+                <button type="submit" className="bg-red border-rad-5 white align-self-center padding-5 w-25percent">Submit</button>
             </form>
         </div>
     )
