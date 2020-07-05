@@ -78,8 +78,41 @@ button{
   background-color: #6b0407;
 }
 
+.bg-black{
+  background-color: black;
+}
+
 .bg-faint{
   background-color: #dcdcdc2e;
+}
+
+/* opacity options */
+.opacity-50{
+  opacity: 50%;
+}
+
+.opacity-100{
+  opacity: 1;
+}
+
+/* position options */
+.absolute{
+  position: absolute;
+}
+
+.top-0{
+  top: 0;
+}
+
+.left-0{
+  left: 0;
+}
+.top-25percent{
+  top: 25%;
+}
+
+.left-40percent{
+  left: 40%;
 }
 
 /* flex options */
@@ -95,8 +128,19 @@ button{
   align-items: center;
 }
 
+.align-start {
+  align-items: flex-start;
+}
+
+.align-self-center{
+  align-self: center;
+}
+
 .justify-center {
   justify-content: center;
+}
+.justify-start {
+  justify-content: start;
 }
 
 .space-between {
@@ -127,10 +171,19 @@ button{
   width: 200px;
 }
 
+.box-25percent{
+  height: 25%;
+  width: 25%;
+}
+
 
 /* height options */
 .h-100percent{
   height: 100%;
+}
+
+.h-107percent{
+  height: 107%;
 }
 
 .vh-100percent{
@@ -159,6 +212,10 @@ button{
   width: 200px;
 }
 
+.w-25percent{
+  width: 25%;
+}
+
 .w-40percent{
   width: 40%;
 }
@@ -181,6 +238,15 @@ button{
 
 .w-fit-content {
   width: fit-content;
+}
+
+/* z-index options */
+.z-1{
+  z-index: 1;
+}
+
+.z-2{
+  z-index: 2;
 }
 
 
@@ -290,8 +356,14 @@ button{
   margin-left: 10px;
 }
 
+.margin-b-5 {
+  margin-bottom: 5px;
+}
 .margin-b-10 {
   margin-bottom: 10px;
+}
+.margin-b-20 {
+  margin-bottom: 20px;
 }
 
 .margin-l-7percent{

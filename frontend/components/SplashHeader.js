@@ -1,9 +1,12 @@
 import React, {useState} from 'react';
-import paints from "../paints.json"
-import ColorList from "./ColorList"
-import About from "./About"
+import paints from "../paints.json";
+import ColorList from "./ColorList";
+import About from "./About";
+import SessionModal from "./sessions/SessionModal";
+import LoginForm from "./sessions/LoginForm";
+import SignupForm from "./sessions/SignupForm";
 
-const SplashHeader = ({setActiveTab}) => {
+const SplashHeader = ({setActiveTab, setSessionModal}) => {
     let colorsObj = {}
   
     paints.forEach(paint => {
@@ -39,8 +42,18 @@ const SplashHeader = ({setActiveTab}) => {
                 </button>
             </div>
             <div className="flex justify-center white margin-bottom-10 default-margin f-20">
-                <p className="link pointer bold border-r-s-1 border-white padding-r-10" onClick={()=> setActiveTab(<About/>) }>About</p>
-                <p className="link pointer bold padding-l-10" onClick={()=> setActiveTab(<ColorList/>) }>Scheme Selector</p>
+                <p className="link pointer bold border-r-s-1 border-white padding-r-10" 
+                    onClick={()=> setActiveTab(<About/>) }>About
+                </p>
+                <p className="link pointer bold padding-l-10 border-r-s-1 border-white padding-r-10" 
+                    onClick={()=> setActiveTab(<ColorList/>) }>Scheme Selector
+                </p>
+                <p className="link pointer bold padding-l-10 border-r-s-1 border-white padding-r-10" 
+                    onClick={()=> setSessionModal("login") }>Login
+                </p>
+                <p className="link pointer bold padding-l-10" 
+                    onClick={()=> setSessionModal("signup") }>Signup
+                </p>
             </div>
 
         </header>
