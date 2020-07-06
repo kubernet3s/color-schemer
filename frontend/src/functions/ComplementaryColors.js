@@ -1,11 +1,12 @@
-import colorsys as cs
+import ./colorTransform as ct
 
 function complementCalculator(color){
     r = color[0]
     g = color[1]
     b = color[2]
-    rawcomp = cs.hsv_to_rgb((cs.rgb_to_hsv(r,g,b)[0]+.5)%1,cs.rgb_to_hsv(r,g,b)[1],cs.rgb_to_hsv(r,g,b)[2])
-    complement = [round(num, 0) for num in rawcomp] 
+    hslcolor = ct.rgbToHsl(r,g,b)
+    hslcomp = ((hslcolor[0]+.5)%1, hslcolor[1], hslcolor[2])
+    complement = ct.hslToRgb(hslcomp[0],hslcomp[1],hslcomp[2])
     return complement
 }
 
