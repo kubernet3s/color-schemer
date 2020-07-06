@@ -34,3 +34,6 @@ function hslToRgb(h, s, l) {
     Math.round(255 * (rgb1[1] + m)),
     Math.round(255 * (rgb1[2] + m))];
 }
+
+export default hslToRgb
+export default rgbToHsl
