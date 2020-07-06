@@ -1,4 +1,4 @@
-import ./colorTransform as ct
+import colorTransform as ct
 
 function complementCalculator(color){
     r = color[0]
